@@ -19,6 +19,7 @@ set nu
 set relativenumber
 set scrolloff=5         " keep 5 lines below and above the cursor
 set shiftwidth=2
+set showcmd
 set showmatch           " highlight matching [{()}]
 set smartcase
 set smartindent
@@ -60,6 +61,7 @@ nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 
 
 " configure Telescope
+" lua require('pluginX')
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
