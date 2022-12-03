@@ -27,6 +27,12 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
 
+-- copy/paste to clipboard
+map('v', '<C-c>', '"*y', opt)
+map('v', '<C-p>', '"*p', opt)
+map('n', '<C-c>', '"*y', opt)
+map('n', '<C-p>', '"*p', opt)
+
 -- split windows
 -- remove default s binding
 map("n", "s", "", opt)
@@ -52,6 +58,7 @@ map("n", "<leader>h", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<leader>l", ":BufferLineCycleNext<CR>", opt)
 -- map("n", "<leader>l", ":BufferLineCycleNext<CR>", opt)
 -- close
+
 -- "moll/vim-bbye"
 map("n", "<leader>w", ":Bdelete!<CR>", opt)
 -- map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)

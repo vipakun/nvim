@@ -4,7 +4,7 @@ local opts = {
   flags = {
     debounce_text_changes = 150,
   },
-  capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
 
   -- https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils/blob/main/lua/nvim-lsp-ts-utils/utils.lua
   -- 传入 tsserver 初始化参数
@@ -24,8 +24,8 @@ local opts = {
 
   on_attach = function(client, bufnr)
     -- 禁用格式化功能，交给专门插件插件处理
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
+    client.server_capabilities.document_formatting = false
+    client.server_capabilities.document_range_formatting = false
     local function buf_set_keymap(...)
       vim.api.nvim_buf_set_keymap(bufnr, ...)
     end
