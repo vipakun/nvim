@@ -24,6 +24,18 @@ return require('packer').startup(function(use)
   		},
   		tag = 'nightly' -- optional, updated every week. (see issue #1193)
 	}
+  -- top buffer
+  use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
+  -- nvim-autopairs
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+  -- indent-blankline
+  use 'lukas-reineke/indent-blankline.nvim'
+  -- dashboard
+  use({ 'glepnir/dashboard-nvim' })
+  use({ 'ahmedkhalf/project.nvim' })
   -- lualine: status bar 
 	use {
 		  'nvim-lualine/lualine.nvim',

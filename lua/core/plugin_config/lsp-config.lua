@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "sumneko_lua", "html", "jsonls", "tsserver", "pylsp", "eslint", "graphql", "sqls", "rust_analyzer", "dockerls", "cssls"}
+  ensure_installed = { "sumneko_lua", "html", "jsonls", "tsserver", "pylsp", "eslint", "graphql", "rust_analyzer", "dockerls", "cssls"}
 })
 
 local on_attach = function (_, bufnr)
