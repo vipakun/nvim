@@ -1,17 +1,25 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+--local ensure_packer = function()
+--  local fn = vim.fn
+--  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+--  if fn.empty(fn.glob(install_path)) > 0 then
+--    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+--    vim.cmd [[packadd packer.nvim]]
+--    return true
+--  end
+--  return false
+--end
+--
+--local packer_bootstrap = ensure_packer()
+-- make sure packer is installed. 
+local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+local is_bootstrap = false
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  is_bootstrap = true
+  vim.fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
+  vim.cmd [[packadd packer.nvim]]
 end
 
-local packer_bootstrap = ensure_packer()
-
-return require('packer').startup(function(use)
+require('packer').startup(function(use)
   -- packer package manager
   use 'wbthomason/packer.nvim'
   -- gruvbox
@@ -58,9 +66,15 @@ return require('packer').startup(function(use)
   use 'rafamadriz/friendly-snippets'
 	-- mason and lsp
   use {
-    'williamboman/mason.nvim',
-	  'williamboman/mason-lspconfig.nvim',
 	  'neovim/nvim-lspconfig',
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+     require = {
+      -- Useful status updates for LSP
+      'j-hui/fidget.nvim',
+      -- Additional lua configuration, makes nvim stuff amazing
+      'folke/neodev.nvim',
+    }
   }
 
   -- telescope
@@ -69,7 +83,27 @@ return require('packer').startup(function(use)
   		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-  if packer_bootstrap then
+  use {
+    'lewis6991/gitsigns.nvim',
+  }
+  if is_bootstrap then
     require('packer').sync()
   end
 end)
+
+if is_bootstrap then
+  print '=================================='
+  print '    Plugins are being installed'
+  print '    Wait until Packer completes,'
+  print '       then restart nvim'
+  print '=================================='
+  return
+end
+
+-- Automatically source and re-compile packer whenever you save this init.lua
+local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePost', {
+  command = 'source <afile> | silent! LspStop | silent! LspStart | PackerCompile',
+  group = packer_group,
+  pattern = vim.fn.expand '$MYVIMRC',
+})

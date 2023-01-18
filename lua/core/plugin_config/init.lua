@@ -9,4 +9,5 @@ require("core.plugin_config.bufferline");
 require("core.plugin_config.indent-line");
 require("core.plugin_config.dashboard");
 require("core.plugin_config.project");
+require("core.plugin_config.gitsigns-config");
 

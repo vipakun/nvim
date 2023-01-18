@@ -21,6 +21,7 @@
 --require('plugin-config.indent-blankline')
 --require('lsp.null-ls')
 require('core.keymaps')
+require('core.basic')
 require('core.plugins')
 require('core.plugin_config')
 
