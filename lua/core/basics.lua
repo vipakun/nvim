@@ -4,11 +4,16 @@ local opt = vim.opt -- for conciseness
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
 
+-- jkhl scrolling buffer for edge
+vim.o.scrolloff = 4
+vim.o.sidescrolloff = 4
+
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
 opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
+opt.smartindent = true -- react to syntax/style of the code to indent
 
 -- line wrapping
 opt.wrap = false -- disable line wrapping
@@ -39,3 +44,7 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 opt.iskeyword:append("-") -- consider string-string as whole word
+
+-- timeout
+vim.o.timeout = true
+vim.o.timeoutlen = 300

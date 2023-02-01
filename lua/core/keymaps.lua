@@ -5,12 +5,20 @@ local keymap = vim.keymap -- for conciseness
 -- general keymaps
 
 -- jj to exit edit mode
-keymap.set("i", "jj", "<Esc>")  
+keymap.set("i", "jj", "<Esc>")
 -- space+n+h, no highlight
-keymap.set("n", "<leader>nh", ":nohl<CR>") 
+keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 -- delete single character without copying into register
 -- keymap.set("n", "x", '"_x')
+
+-- move selected lines
+keymap.set("v", "J", ":move '>+1<CR>gv-gv")
+keymap.set("v", "K", ":move '<-2<CR>gv-gv")
+
+-- indent in visual mode
+keymap.set("v", "<", "<gv")
+keymap.set("v", ">", ">gv")
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>") -- increment
@@ -21,7 +29,7 @@ keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
-keymap.set("n", "<leader>wo", "<C-w>o") -- close other windows 
+keymap.set("n", "<leader>wo", "<C-w>o") -- close other windows
 
 -- tab management
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
@@ -48,3 +56,9 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<CR>") -- find string u
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>") -- list available help tags
 
+-- bufferline
+-- cycle buffers
+keymap.set("n", "<leader>h", ":BufferLineCyclePrev<CR>")
+keymap.set("n", "<leader>l", ":BufferLineCycleNext<CR>")
+keymap.set("n", "<leader>w", ":Bdelete!<CR>")
+keymap.set("n", "<leader>bc", ":BufferLinePickClose<CR>")

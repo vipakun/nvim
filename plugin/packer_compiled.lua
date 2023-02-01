@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/xy/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/Users/xy/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/xy/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -216,6 +221,11 @@ _G.packer_plugins = {
     path = "/Users/xy/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
   },
+  ["vim-bbye"] = {
+    loaded = true,
+    path = "/Users/xy/.local/share/nvim/site/pack/packer/start/vim-bbye",
+    url = "https://github.com/moll/vim-bbye"
+  },
   ["vim-maximizer"] = {
     loaded = true,
     path = "/Users/xy/.local/share/nvim/site/pack/packer/start/vim-maximizer",
@@ -225,6 +235,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/xy/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/xy/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
