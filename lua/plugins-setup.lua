@@ -37,6 +37,7 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons") -- nvim-tree icons
 	use("nvim-lualine/lualine.nvim") -- statusline
 	-- fuzzy finding w/ telescope
+	use("BurntSushi/ripgrep")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
@@ -79,9 +80,6 @@ return packer.startup(function(use)
 
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
-
-	-- top buffer: bufferline
-	use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
 
 	-- which-key
 	use("folke/which-key.nvim")
