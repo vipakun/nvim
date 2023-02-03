@@ -55,3 +55,9 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<CR>") -- find string in 
 keymap.set("n", "<leader>fg", "<cmd>Telescope grep_string<CR>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>") -- list available help tags
+
+-- trouble
+keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<CR>")
+keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<CR>")
+keymap.set("n", "<leader>xx", "<cmd>TroubleToggle document_diagnostics<CR>")
+keymap.set("n", "<leader>xx", "<cmd>TroubleToggle quickfix<CR>")

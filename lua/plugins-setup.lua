@@ -84,6 +84,9 @@ return packer.startup(function(use)
 	-- which-key
 	use("folke/which-key.nvim")
 
+	-- trouble
+	use("folke/trouble.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
