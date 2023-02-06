@@ -91,6 +91,9 @@ return packer.startup(function(use)
 	-- undotree
 	use("mbbill/undotree")
 
+	-- vim-fugitive
+	use("tpope/vim-fugitive")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
