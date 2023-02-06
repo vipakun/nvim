@@ -16,6 +16,10 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("v", "J", ":move '>+1<CR>gv-gv")
 keymap.set("v", "K", ":move '<-2<CR>gv-gv")
 
+-- keep cursor in the center
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+
 -- indent in visual mode
 keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
@@ -23,6 +27,17 @@ keymap.set("v", ">", ">gv")
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
+
+-- fzf and open in new tmux session
+keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
+-- replacing the word cursor is on
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- format
+keymap.set("n", "<leader>f", function()
+	vim.lsp.buf.format()
+end)
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically

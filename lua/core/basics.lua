@@ -20,6 +20,8 @@ opt.wrap = false -- disable line wrapping
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+opt.incsearch = true -- incremental search
+opt.hlsearch = false -- no highlight search
 
 -- cursor line
 opt.cursorline = true -- highlight the current cursor line
@@ -45,5 +47,8 @@ opt.splitbelow = true -- split horizontal window to the bottom
 opt.iskeyword:append("-") -- consider string-string as whole word
 
 -- timeout
-vim.o.timeout = true
-vim.o.timeoutlen = 300
+opt.timeout = true
+opt.timeoutlen = 300
+
+-- update time
+opt.updatetime = 50
