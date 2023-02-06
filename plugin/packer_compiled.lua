@@ -226,6 +226,11 @@ _G.packer_plugins = {
     path = "/Users/xy/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
   },
+  undotree = {
+    loaded = true,
+    path = "/Users/xy/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
+  },
   ["vim-maximizer"] = {
     loaded = true,
     path = "/Users/xy/.local/share/nvim/site/pack/packer/start/vim-maximizer",

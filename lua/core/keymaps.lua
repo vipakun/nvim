@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 local keymap = vim.keymap -- for conciseness
 
 -- general keymaps
-
+-- teting
 -- jj to exit edit mode
 keymap.set("i", "jj", "<Esc>")
 -- space+n+h, no highlight
@@ -51,6 +51,7 @@ keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- leader+e(xplore) to toggl
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>") -- find files within current working directory, respects .gitignore
+-- keymap.set("n", "<C-p>", "<cmd>Telescope git_files<CR>")
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<CR>") -- find string in current working directory as you type
 keymap.set("n", "<leader>fg", "<cmd>Telescope grep_string<CR>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>") -- list open buffers in current neovim instance
@@ -61,3 +62,6 @@ keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<CR>")
 keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<CR>")
 keymap.set("n", "<leader>xx", "<cmd>TroubleToggle document_diagnostics<CR>")
 keymap.set("n", "<leader>xx", "<cmd>TroubleToggle quickfix<CR>")
+
+-- undotree
+keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>")

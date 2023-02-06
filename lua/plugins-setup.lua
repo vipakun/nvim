@@ -1,4 +1,5 @@
 -- auto install packer if not installed
+-- testing something
 local ensure_packer = function()
 	local fn = vim.fn
 	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -86,6 +87,9 @@ return packer.startup(function(use)
 
 	-- trouble
 	use("folke/trouble.nvim")
+
+	-- undotree
+	use("mbbill/undotree")
 
 	if packer_bootstrap then
 		require("packer").sync()
