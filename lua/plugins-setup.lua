@@ -94,6 +94,9 @@ return packer.startup(function(use)
 	-- vim-fugitive
 	use("tpope/vim-fugitive")
 
+	-- mini-nvim to trail spaces
+	use("ntpeters/vim-better-whitespace")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
