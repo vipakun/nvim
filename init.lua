@@ -16,6 +16,7 @@ require("plugins.autopairs")
 
 require("plugins.treesitter")
 require("plugins.gitsigns")
+require("plugins.vim-fugitive")
 require("plugins.which-key")
 require("plugins.trouble")
 require("plugins.undotree")
