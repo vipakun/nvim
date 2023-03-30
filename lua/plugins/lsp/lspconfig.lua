@@ -87,6 +87,22 @@ lspconfig["eslint"].setup({
 	on_attach = on_attach,
 })
 
+-- configure rust server
+lspconfig["rust_analyzer"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	-- settings = {
+	-- ["rust-analyzer"] = {
+	-- checkOnSave = {
+	-- 	command = "clippy",
+	-- },
+	-- diagnostics = {
+	-- 	enable = true,
+	-- },
+	-- 	},
+	-- },
+})
+
 -- configure emmet language server
 lspconfig["emmet_ls"].setup({
 	capabilities = capabilities,

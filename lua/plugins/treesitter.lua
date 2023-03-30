@@ -24,7 +24,7 @@ treesitter.setup({
 		"html",
 		"css",
 		"markdown",
-		-- "svelte",
+		"rust",
 		"graphql",
 		"bash",
 		"lua",

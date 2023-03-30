@@ -75,8 +75,8 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>") -- list available 
 -- trouble
 keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<CR>")
 keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<CR>")
-keymap.set("n", "<leader>xx", "<cmd>TroubleToggle document_diagnostics<CR>")
-keymap.set("n", "<leader>xx", "<cmd>TroubleToggle quickfix<CR>")
+keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<CR>")
+keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<CR>")
 
 -- undotree
 keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>")

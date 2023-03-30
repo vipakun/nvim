@@ -25,7 +25,6 @@ mason_lspconfig.setup({
 		"tsserver",
 		"html",
 		"cssls",
-		-- "tailwindcss",
 		"lua_ls",
 		"emmet_ls",
 		"jsonls",
@@ -46,6 +45,7 @@ mason_null_ls.setup({
 		"stylua", -- lua formatter
 		"eslint_d", -- ts/js linter
 		"pylint", -- python linter
+		"rust_analyzer", -- rust-analyzer
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,
