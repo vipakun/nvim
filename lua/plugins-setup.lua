@@ -98,6 +98,7 @@ return packer.startup(function(use)
 	-- mini-nvim to trail spaces
 	use("ntpeters/vim-better-whitespace")
 
+	use("github/copilot.vim")
 	if packer_bootstrap then
 		require("packer").sync()
 	end
