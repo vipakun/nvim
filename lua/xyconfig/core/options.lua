@@ -52,3 +52,6 @@ opt.timeoutlen = 300
 
 -- update time
 opt.updatetime = 50
+
+-- turn off swapfile
+opt.swapfile = false
