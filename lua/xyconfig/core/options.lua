@@ -10,6 +10,7 @@ vim.o.sidescrolloff = 4
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
 opt.shiftwidth = 2 -- 2 spaces for indent width
+opt.shiftround = true
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.smartindent = true -- react to syntax/style of the code to indent

@@ -7,5 +7,5 @@ keymap.set("n", "<leader>sv", function() require("trouble").open() end)
 keymap.set("i", "jj", "<Esc>")
 --  reload neovim
 keymap.set("n", "<leader>rs", "<cmd>:source $MYVIMRC<CR>")
-
-
+-- clear highlight search
+keymap.set("n","<leader>h", ":nohlsearch<CR>")
