@@ -21,6 +21,7 @@ return {
 				},
 			})
 
+			require("telescope").load_extension("ui-select")
 			-- set keymaps
 			local keymap = vim.keymap -- for conciseness
 
@@ -33,7 +34,6 @@ return {
 				"<cmd>Telescope grep_string<cr>",
 				{ desc = "Find string under cursor in cwd" }
 			)
-			require("telescope").load_extension("ui-select")
 		end,
 	},
 }

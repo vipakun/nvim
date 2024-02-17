@@ -4,7 +4,6 @@ return {
   dependencies = {
     "JoosepAlviste/nvim-ts-context-commentstring",
   },
-  config = true,
   config = function()
     -- import comment plugin safely
     local comment = require("Comment")
@@ -18,6 +17,10 @@ return {
     })
   end,
 }
+
+
+
+
 
 -- in normal mode
 -- `gcc` - Toggles the current line using linewise comment
