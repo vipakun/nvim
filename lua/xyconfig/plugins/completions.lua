@@ -1,21 +1,31 @@
 return {
-  {
-    "hrsh7th/cmp-nvim-lsp",
-  },
-  {
-    "L3MON4D3/LuaSnip",
-    dependencies = {
-      "saadparwaiz1/cmp_luasnip",
-      "rafamadriz/friendly-snippets",
-    },
-    version = "v2.*",
-    build = "make install_jsregexp",
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    config = function()
+	{
+		"hrsh7th/cmp-nvim-lsp",
+	},
+	{
+		{
+			"L3MON4D3/LuaSnip",
+			version = "v2.*",
+			build = "make install_jsregexp",
+		},
+		dependencies = {
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
+			"onsails/lspkind.nvim",
+		},
+		version = "v2.*",
+		build = "make install_jsregexp",
+	},
+	{
+		"hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+		config = function()
       local cmp = require("cmp")
-      require("luasnip.loaders.from_vscode").lazy_load()
+			local luasnip = require("luasnip")
+			local lspkind = require("lspkind")
+			require("luasnip.loaders.from_vscode").lazy_load()
 
       cmp.setup({
         snippet = {

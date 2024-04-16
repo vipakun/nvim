@@ -38,7 +38,9 @@ return {
 					"bash",
 					"lua",
 					"vim",
+					"vimdoc",
 					"dockerfile",
+          "query",
 					"gitignore",
 				},
 				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
@@ -47,6 +49,15 @@ return {
 				-- 	enable_autocmd = false,
 				-- },
 				-- auto install above language parsers
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = "<C-space>",
+            node_incremental = "<C-space>",
+            scope_incremental = false,
+            node_decremental = "<bs>",
+          },
+        },
 				auto_install = true,
 			})
 		end,
