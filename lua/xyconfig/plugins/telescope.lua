@@ -9,6 +9,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 			"nvim-tree/nvim-web-devicons",
+      "folke/todo-comments.nvim",
 		},
 		config = function()
 			local telescope = require("telescope")
@@ -33,6 +34,7 @@ return {
 				"<cmd>Telescope grep_string<cr>",
 				{ desc = "Find string under cursor in cwd" }
 			)
+      keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 			require("telescope").load_extension("ui-select")
 		end,
 	},
